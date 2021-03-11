@@ -1,0 +1,36 @@
+<form action="/api/users" method="POST" id="add_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" autocomplete="off" placeholder="Enter the Student Name here">
+        </div>
+        <div class="form-group">
+            <label for="Fees" class="text-light">Pending Fees</label>
+            <input type="text" name="fees" value="" autocomplete="off" placeholder="Enter Fees of the student here">
+        </div>
+        <div class="form-group">
+            <label for="mobno" class="text-light">Phoneno</label>
+            <input type="text" name="mobno" value="" autocomplete="off" placeholder="Enter the student mobile no">
+        </div>
+
+        <div class="form-group">
+            <label for="status" class="text-light">Status</label>
+            <div class="radio inline">
+                <a>
+                    <input type="radio" id="radio-4" name="status" value="Active">
+                    <label for="radio-4" class="radio-label font-bold">Active</label>
+
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="status" value="Inactive">
+                <label for="radio-5" class="radio-label">Inactive</label>
+                </a>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+    </div>
+
+</form>

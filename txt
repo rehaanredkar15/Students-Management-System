@@ -1,0 +1,98 @@
+choosing of database {choosing database depends on cap, consistent , avaialability, and partition tolerance.
+pt = connectivity between database,
+con = mysql,prostresql,microsoft sql,
+avai=
+
+consistency = when we read a database data it should be similar to which we saved in the database and if other poeple are trying to access the 
+same data from the database then they should get it , i.e data should be not change however read operration happens.
+
+avaialability = when we try to read and write the data from the database at the same time that means when a person is reading the data other person 
+is not allowded to write on that database , mostly in sql databases when read operation happen only after that 
+write happens
+
+pt = when we made a replica of database other database should contain a good relation if a breakdown happens, how much fast can we 
+recover the relation , this is the most important factor  
+they are Two types of datbases ACID AND BASE , relation databases are ACID and focus on consistency, i.e when we perform 3 operations if 2 are completed and third isnt performed well then all the three rollback this is atomocity 
+
+other are basic , that is avaialability is focussed , that is database is avaialable for other users when that data is getting write,
+doesnt get completely written and has soft copy, i.e mongodb 
+
+for analysis base is good, where data avaialability is important rather than consistency of the data that is if the data of 10 out of 1000 isnt apppropriate than our average is not 
+that much effected , but when we use a banking system then the consistency of the data i.e if we are transferring 10,000 rupees than the operation should perform apppropriately, rather than faster 
+that means the data will be overwritten and no other person we have the access to that bank account 
+ 
+
+}
+
+dot env is very usefull in collaborative environments , it separates secret from source code 
+and without sharing credentials and anybody could have their own dotenv file 
+
+next step is requiring morgan , it is a middle ware , when we want some activity to happen between
+request and response we have the middleware for example authentication , morgan just console logs the information and it has
+tokens which are fucctions , when ever we make a request morgan helps in console loggin that request in the console
+
+adding body-parser module , to handle the  post request we require the middle ware body-parser module
+body parser calls the url encoded function, 
+So, where is our data ? How will we extract it if its not only present in my request.
+Let’s say you are sending a html form data to node-js server i.e. you made a request to the server. The server file would receive your request under a request object. Now by logic,
+ if you console log this request object in your server file you should see your form data some where in it, which could be extracted then, 
+but whoa ! you actually don’t !
+Simple explanation to this is http sends your form data in bits and pieces which are intended to get assembled as they reach their destination. 
+So how would you extract your data.But, why take this pain of every-time manually parsing your data for chunks and assembling it. Use something called “body-parser” 
+which would do this for you. body-parser parses your request and converts it into a format from which you can easily extract relevant information that you may need.
+For example, let’s say you have a sign-up form at your frontend. You are filling it, and requesting server to save the details somewhere.
+Extracting username and password from your request goes as simple as below if you use body-parser.
+
+A new body object containing the parsed data is populated on the request object after the middleware 
+(i.e. req.body). This object will contain key-value pairs,where the value can be a string or 
+array (when extended is false),or any type (when extended is true).
+
+then we specify the view engine,IF we create another file in ejs folder then we need to inform express
+to set that folder as the default view folder for that require path and then 
+set path.resolve(___diranme,"views/ejs"), now loading the assets 
+for that use (css,express.static (path resolve(dirname,assets )) and then lloading assets ,
+making ejs files, making header, and then rendering the ejs file , separating header and footer files ,
+ start with _ , including this header and footer,
+
+
+
+ after doing all the front end work we render the front end files ,then we add the routes to our route folder and
+ putt all the route files in that folder and then we also take  the call back functions there, and just import 
+ its variables,now we will connect our database to our program , we use cloud because there is chance to local host drive crash
+ 
+ obtaining the cdn from the cloud by creating clusterr , telling the users as admin then database acces and network access providiing
+networkacess and then copying the cdn link , now creating a file in database folder to establish the mongooes connection
+using a asynch function and using try block , in that try block 1) creating connection 
+2) stopping warinings using new url parser true, etc etc.
+3) console.log(connection )
+
+
+axios is used to make request to our api
+
+
+axios.get("https://locahost:/api/users")
+        .then(function (response) {
+            console.log(response)
+            res.render('index', { users:response.data });
+        })
+        .catch(err => {
+            res.send(err);
+        })
+
+         <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">New User</h2>
+            <span class="text-light">Use the below form to create a new account</span>
+        </div>
+
+        <!-- add user form -->
+        <%- include('include/_form') %>
+       
+    </div>
+</main>
